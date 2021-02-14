@@ -1,0 +1,13 @@
+spring:
+  cloud:
+    config:
+      enabled: false
+
+server:
+  port: 8080
+management:
+  port: 8081
+
+api:
+  user-settings:
+    url: http://localhost:7000
