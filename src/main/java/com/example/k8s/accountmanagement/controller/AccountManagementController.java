@@ -17,11 +17,11 @@ public class AccountManagementController {
     @Autowired
     private UserSettingsService userSettingsService;
 
-    @PutMapping("/accounts/{accountId}/account-order")
+    @PatchMapping("/accounts/{accountId}/account-settings")
     public ResponseEntity<Void> updateAccountOrder(@PathVariable("accountId") String accountId,
                                                    @RequestBody AccountUpdate accountUpdate) {
 
-        userSettingsService.updateAccountSettingsOrder(accountId, accountUpdate);
+        userSettingsService.patchAccountSettings(accountId, accountUpdate);
         return ResponseEntity.noContent().build();
     }
 }
